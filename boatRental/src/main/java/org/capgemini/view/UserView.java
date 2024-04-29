@@ -8,18 +8,15 @@ public class UserView {
     public static void view() {
         MAIN_LOOP:
         while (true) {
-        System.out.println();
-        System.out.println("========\u26F4 USER MENU \u26F4=======");
-        System.out.println("___________________________________");
-        System.out.println("1. New User");
-        System.out.println("2. User List");
-        System.out.println("3. Update User");
-        System.out.println("4. Delete Users");
-        System.out.println("9. Exit");
-        System.out.println();
-        System.out.print("Please make a choice: ");
-
-
+            System.out.println();
+            System.out.println("========\u26F4 USER MENU \u26F4=======");
+            System.out.println("1. Add User");
+            System.out.println("2. User List");
+            System.out.println("3. Update User");
+            System.out.println("4. Delete Users");
+            System.out.println("9. Exit");
+            System.out.println();
+            System.out.print("Please make a choice: ");
             Scanner scanner = new Scanner(System.in);
             switch (scanner.next()) {
                 case "1":

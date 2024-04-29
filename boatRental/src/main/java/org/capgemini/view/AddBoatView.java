@@ -11,8 +11,6 @@ public class AddBoatView {
 
         System.out.println();
         System.out.println("========\u26F4 NEW BOAT \u26F4=======");
-        System.out.println("________________________________");
-
         System.out.println("Enter all details of the boat");
         System.out.print("BoatID: ");
         String boatID = scanner.next();

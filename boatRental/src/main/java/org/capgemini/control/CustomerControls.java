@@ -25,13 +25,14 @@ public class CustomerControls {
     public static void listOfCustomers() {
         Model model = Model.getInstance();
         System.out.println();
-        System.out.println("========\u26F4 CUSTOMER LIST \u26F4=======");
-        System.out.println("______________________________");
-        System.out.println("Customer ID\tCustomer Name\tCustomer Mail\tCustomer Phone\tcustomerRoomNumber`" );
+        System.out.println("\t\t\t\t========\u26F4 CUSTOMER LIST \u26F4=======");
+        System.out.println(String.format("%-15s %-20s %-15s %-15s %-25s",
+                "Customer ID", "Customer Name", "Customer Mail",
+                "Customer Phone", "Customer Room Number"));
         for (Customer c : model.getCustomers().getCustomers()) {
-            System.out.println(c.getCustomerID()+"\t"+c.getCustomerName()+"\t"+c.getCustomerEmail()
-                    +"\t"+c.getCustomerPhone()+"\t"+c.getCustomerRoomNumber());
-
+            System.out.println(String.format("%-15s %-20s %-15s %-15s %-25s",
+                    c.getCustomerID(), c.getCustomerName(), c.getCustomerEmail(),
+                    c.getCustomerPhone(),c.getCustomerRoomNumber()));
         }
         System.out.println("....End of customer list....");
     }

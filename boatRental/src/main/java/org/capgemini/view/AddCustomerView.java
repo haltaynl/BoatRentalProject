@@ -12,8 +12,9 @@ public class AddCustomerView {
         System.out.println("Enter all details of the customer:");
         System.out.print("Customer ID: ");
         String customerID = scanner.next();
+        scanner.nextLine();
         System.out.print("Customer Name: ");
-        String customerName = scanner.next();
+        String customerName = scanner.nextLine();
         System.out.print("Customer Phone: ");
         String customerPhone = scanner.next();
         System.out.print("Customer Email: ");

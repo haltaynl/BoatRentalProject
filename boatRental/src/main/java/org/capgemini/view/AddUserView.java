@@ -10,12 +10,12 @@ public class AddUserView {
         Scanner scanner = new Scanner(System.in);
         System.out.println();
         System.out.println("========\u26F4 NEW USER \u26F4=======");
-        System.out.println("________________________________");
         System.out.println("Please enter all details of the user");
         System.out.print("UserID: ");
         String userID = scanner.next();
+        scanner.nextLine();
         System.out.print("UserName: ");
-        String userName = scanner.next();
+        String userName = scanner.nextLine();
         System.out.print("UserPassword: ");
         String userPassword = scanner.next();
         System.out.print("UserRole: ");

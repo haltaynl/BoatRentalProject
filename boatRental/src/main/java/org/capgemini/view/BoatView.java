@@ -11,8 +11,7 @@ public class BoatView {
         while (true) {
             System.out.println();
             System.out.println("========\u26F4 BOAT MENU \u26F4=======");
-            System.out.println("___________________________________");
-            System.out.println("1. New Boat");
+            System.out.println("1. Add Boat");
             System.out.println("2. Boats List");
             System.out.println("3. Update Boat");
             System.out.println("4. Delete Boat");

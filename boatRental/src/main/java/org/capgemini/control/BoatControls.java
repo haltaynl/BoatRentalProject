@@ -24,8 +24,7 @@ public class BoatControls {
     public static void listOfBoats() {
         Model model = Model.getInstance();
         System.out.println();
-        System.out.println("========\u26F4 BOAT LIST \u26F4=======");
-        System.out.println("______________________________");
+        System.out.println("\t\t\t\t\t\t\t\t========\u26F4 BOAT LIST \u26F4=======");
         System.out.println(String.format("%-15s %-20s %-15s %-15s %-25s %-15s",
                 "Boat ID", "Boat Name", "Seats",
                 "Availability", "Price", "Charging Time"));
