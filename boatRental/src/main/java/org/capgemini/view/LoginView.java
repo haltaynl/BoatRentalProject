@@ -11,7 +11,7 @@ public class LoginView {
 
     public static void view(){
         System.out.println("***************************************************");
-        System.out.println("**    \u26F4 Welcome to BoatRental Program \u26F4     **");
+        System.out.println(" \u26F4 Welcome to MOLVENO HOTEL Boat Rental App \u26F4");
         System.out.println("***************************************************");
         String username=null;
         String password=null;

@@ -11,7 +11,6 @@ public class UpdateBoatView {
         Scanner scanner = new Scanner(System.in);
         System.out.println();
         System.out.println("========\u26F4 UPDATE BOAT \u26F4=======");
-        System.out.println("________________________________");
         System.out.println("Please enter the BoatID of the user that will update");
         System.out.print("BoatID: ");
         String boatID = scanner.next();
@@ -19,7 +18,8 @@ public class UpdateBoatView {
         if (old_boat != null) {
             System.out.println("Please enter all details of the boat that will update");
             System.out.print("BoatName: ");
-            String boatName = scanner.next();
+            scanner.nextLine();
+            String boatName = scanner.nextLine();
             System.out.print("Seats: ");
             int seats = scanner.nextInt();
             System.out.print("Charging Time: ");
