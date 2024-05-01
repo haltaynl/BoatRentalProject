@@ -11,10 +11,10 @@ public class BoatControls {
         model.getBoats().store();
     }
 
-    public static Boat findBoat(String boatID) {
+    public static Boat findBoat(String boatName) {
         Model model = Model.getInstance();
         for (Boat temporaryBoat : model.getBoats().getBoats()) {
-            if ((temporaryBoat.getBoatID().equals(boatID)))
+            if ((temporaryBoat.getBoatName().equals(boatName)))
                 return temporaryBoat;
         }
         System.out.println("The boat is not found !!!");

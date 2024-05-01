@@ -30,7 +30,7 @@ public class Boats {
                 sb.append(";");
                 sb.append(oneBoat.getChargingTime());
                 sb.append(";");
-                sb.append(oneBoat.getSeats());
+                sb.append(oneBoat.getPrice());
                 sb.append(";");
                 sb.append(oneBoat.isAvailability());
                 sb.append("\n");

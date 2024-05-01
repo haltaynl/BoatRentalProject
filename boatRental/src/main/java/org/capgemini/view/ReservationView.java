@@ -3,12 +3,13 @@ import java.util.Scanner;
 public class ReservationView {
     public static void view() {
         System.out.println("RESERVATION MENU");
-        System.out.println("==========");
-        System.out.println("1. New Reservation");
+        System.out.println("===============");
+        System.out.println("1. Add Reservation");
         System.out.println("2. Reservation List");
         System.out.println("3. Update Reservation");
-        System.out.println("4. Delete Reservation");
-        System.out.println("5. Cancel Reservation");
+        System.out.println("4. Extend Reservation");
+        System.out.println("5. Delete Reservation");
+        System.out.println("6. Cancel Reservation");
         System.out.println("9. Exit");
         System.out.println();
 
@@ -26,7 +27,9 @@ public class ReservationView {
                 case "4":
                     break;
                 case "5":
-                    //ListAllBooksView.view();
+                    break;
+                case "6":
+                    break;
                 case "9":
                     break MAIN_LOOP;
                 default:

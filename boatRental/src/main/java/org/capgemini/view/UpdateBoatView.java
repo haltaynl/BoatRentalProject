@@ -2,40 +2,72 @@ package org.capgemini.view;
 
 import org.capgemini.control.BoatControls;
 import org.capgemini.model.Boat;
+import org.capgemini.model.Model;
 
 
 import java.util.Scanner;
 
 public class UpdateBoatView {
+    
     public static void view() {
         Scanner scanner = new Scanner(System.in);
         System.out.println();
         System.out.println("========\u26F4 UPDATE BOAT \u26F4=======");
-        System.out.println("Please enter the BoatID of the user that will update");
-        System.out.print("BoatID: ");
-        String boatID = scanner.next();
-        Boat old_boat = BoatControls.findBoat(boatID);
-        if (old_boat != null) {
-            System.out.println("Please enter all details of the boat that will update");
-            System.out.print("BoatName: ");
-            scanner.nextLine();
-            String boatName = scanner.nextLine();
-            System.out.print("Seats: ");
-            int seats = scanner.nextInt();
-            System.out.print("Charging Time: ");
-            int chargingTime = scanner.nextInt();
-            System.out.print("Price: ");
-            double price = scanner.nextDouble();
-            System.out.print("Availability: ");
-            boolean availability = scanner.nextBoolean();
+        System.out.println("Please enter the Boat Name of the boat that will update");
+        System.out.print("Boat Name: ");
+        String boatName = scanner.nextLine();
+        Boat update_boat = BoatControls.findBoat(boatName);
+        if (update_boat != null) {
+            System.out.println();
+            System.out.println("1. Update Boat Name");
+            System.out.println("2. Update Seats");
+            System.out.println("3. Update Charging Time");
+            System.out.println("4. Update Price");
+            System.out.println("5. Update Availability");
+            System.out.println("9. Exit");
+            System.out.println();
+            System.out.print("Please make a choice: ");
+            switch (scanner.next()) {
+                case "1":
+                    scanner.nextLine();
+                    System.out.print("New Boat Name: ");
+                    String newBoatName = scanner.nextLine();
+                    update_boat.setBoatName(newBoatName);
+                    break;
+                case "2":
+                    scanner.nextLine();
+                    System.out.print("Seats: ");
+                    int newSeats = scanner.nextInt();
+                    update_boat.setSeats(newSeats);
+                    break;
+                case "3":
+                    scanner.nextLine();
+                    System.out.print("Charging Time: ");
+                    int newChargingTime = scanner.nextInt();
+                    update_boat.setChargingTime(newChargingTime);
+                    break ;
+                case "4":
+                    scanner.nextLine();
+                    System.out.print("Price: ");
+                    double price= scanner.nextDouble();
+                    update_boat.setPrice(price);
+                    break;
+                case "5":
+                    scanner.nextLine();
+                    System.out.print("Availability: ");
+                    boolean availability= scanner.nextBoolean();
+                    update_boat.setAvailability(availability);
+                    break;
+                case "9":
 
-            BoatControls.removeBoat(old_boat);
-            Boat updatedBoat = new Boat(boatID, boatName, seats, chargingTime, price, availability);
-            BoatControls.addBoat(updatedBoat);
-            System.out.println("The boat is successfully updated!");
+                    break ;
+                default:
+                    System.out.println("Invalid option");
+                    break;
+            }
+            Model model=Model.getInstance();
+            model.getBoats().store();
 
-            // checking of wrong data
-
+            }
         }
     }
-}
