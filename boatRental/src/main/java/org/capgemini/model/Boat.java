@@ -3,6 +3,7 @@ package org.capgemini.model;
 public class Boat {
     private String boatID;
     private String boatName;
+    private String boatType;
     private int seats;
     private int chargingTime;
     private double price;
@@ -11,7 +12,7 @@ public class Boat {
     public Boat() {
     }
 
-    public Boat(String boatID, String boatName, int seats, int chargingTime, double price, boolean availability) {
+    public Boat(String boatID, String boatName, String boatType, int seats, int chargingTime, double price, boolean availability) {
         this.boatID = boatID;
         this.boatName = boatName;
         this.seats = seats;
@@ -20,6 +21,13 @@ public class Boat {
         this.availability = availability;
     }
 
+    public String getBoatType() {
+        return boatType;
+    }
+
+    public void setBoatType(String boatType) {
+        this.boatType = boatType;
+    }
     public String getBoatID() {
         return boatID;
     }

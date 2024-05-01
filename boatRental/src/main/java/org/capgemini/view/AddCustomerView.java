@@ -19,7 +19,7 @@ public class AddCustomerView {
         String customerPhone = scanner.next();
         System.out.print("Customer Email: ");
         String customerEmail = scanner.next();
-        System.out.print("Customer Roomnumber: ");
+        System.out.print("Customer RoomNumber: ");
         String customerRoomNumber = scanner.next();
 
         Customer customer = new Customer(customerID,customerName, customerPhone, customerEmail, customerRoomNumber);

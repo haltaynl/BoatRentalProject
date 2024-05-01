@@ -42,4 +42,6 @@ public class BoatControls {
         model.getBoats().getBoats().remove(oldBoat);
         model.getBoats().store();
     }
+
+
 }
