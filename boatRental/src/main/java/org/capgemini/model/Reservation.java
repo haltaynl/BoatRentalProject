@@ -13,7 +13,20 @@ public class Reservation {
     public Reservation() {
     }
 
-    public Reservation(String boat, String customer, LocalDateTime beginDateTime, LocalDateTime endDateTime) {
+    public Reservation(String reservationID, Boat boat, Customer customer, LocalDateTime beginDateTime, LocalDateTime endDateTime) {
+        this.reservationID = reservationID;
+        this.boat = boat;
+        this.customer = customer;
+        this.beginDateTime = beginDateTime;
+        this.endDateTime = endDateTime;
+        this.cost = cost;
+    }
+
+    public Reservation(String boatname, String customerID, LocalDateTime beginDateTime, LocalDateTime endDateTime, double cost) {
+
+    }
+
+    public Reservation(String boatname, String customerID, LocalDateTime beginDateTime, LocalDateTime endDateTime) {
 
     }
 

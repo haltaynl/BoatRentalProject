@@ -17,6 +17,8 @@ public class AddBoatView {
         System.out.print("BoatName: ");
         scanner.nextLine();
         String boatName = scanner.nextLine();
+        System.out.print("BoatType: ");
+        String boatType = scanner.nextLine();
         System.out.print("Seats: ");
         int seats = scanner.nextInt();
         System.out.print("Charging Time: ");
@@ -25,7 +27,7 @@ public class AddBoatView {
         double price=scanner.nextDouble();
         boolean availability = true;
 
-        Boat boat = new Boat(boatID, boatName, seats, chargingTime, price, availability);
+        Boat boat = new Boat(boatID, boatName, boatType, seats, chargingTime, price, availability);
         BoatControls.addBoat(boat);
         System.out.println("New Boat is successfully added !!");
     }
