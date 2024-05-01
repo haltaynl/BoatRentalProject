@@ -69,6 +69,7 @@ public class Boats {
 
     }
 
+
     public String findFreeBoat(LocalDateTime startDateTime, LocalDateTime endDateTime) {
         String boatID = "";
         for (Boat boat : boats) {

@@ -34,6 +34,7 @@ public class UpdateBoatView {
                     System.out.print("New Boat Name: ");
                     String newBoatName = scanner.nextLine();
                     update_boat.setBoatName(newBoatName);
+                    System.out.println("The Boat Name is updated. ");
                     break;
                 case "2":
                     scanner.nextLine();
@@ -46,6 +47,7 @@ public class UpdateBoatView {
                     System.out.print("Seats: ");
                     int newSeats = scanner.nextInt();
                     update_boat.setSeats(newSeats);
+                    System.out.println("The Boat Seats is updated. ");
                     break;
 
                 case "4":
@@ -53,18 +55,21 @@ public class UpdateBoatView {
                     System.out.print("Charging Time: ");
                     int newChargingTime = scanner.nextInt();
                     update_boat.setChargingTime(newChargingTime);
+                    System.out.println("The Boat ChargingTime is updated. ");
                     break ;
                 case "5":
                     scanner.nextLine();
                     System.out.print("Price: ");
                     double price= scanner.nextDouble();
                     update_boat.setPrice(price);
+                    System.out.println("The Price is updated. ");
                     break;
                 case "6":
                     scanner.nextLine();
                     System.out.print("Availability: ");
                     boolean availability= scanner.nextBoolean();
                     update_boat.setAvailability(availability);
+                    System.out.println("The Boat Availability is updated. ");
                     break;
                 case "9":
                     break ;
