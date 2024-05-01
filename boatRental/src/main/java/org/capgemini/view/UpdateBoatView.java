@@ -20,10 +20,11 @@ public class UpdateBoatView {
         if (update_boat != null) {
             System.out.println();
             System.out.println("1. Update Boat Name");
-            System.out.println("2. Update Seats");
-            System.out.println("3. Update Charging Time");
-            System.out.println("4. Update Price");
-            System.out.println("5. Update Availability");
+            System.out.println("2. Update Boat Type");
+            System.out.println("3. Update Seats");
+            System.out.println("4. Update Charging Time");
+            System.out.println("5. Update Price");
+            System.out.println("6. Update Availability");
             System.out.println("9. Exit");
             System.out.println();
             System.out.print("Please make a choice: ");
@@ -37,26 +38,33 @@ public class UpdateBoatView {
                     break;
                 case "2":
                     scanner.nextLine();
+                    System.out.print("New Boat Type: ");
+                    String newBoatType = scanner.nextLine();
+                    update_boat.setBoatName(newBoatType);
+                    break;
+                case "3":
+
                     System.out.print("Seats: ");
                     int newSeats = scanner.nextInt();
                     update_boat.setSeats(newSeats);
                     System.out.println("The Boat Seats is updated. ");
                     break;
-                case "3":
+
+                case "4":
                     scanner.nextLine();
                     System.out.print("Charging Time: ");
                     int newChargingTime = scanner.nextInt();
                     update_boat.setChargingTime(newChargingTime);
                     System.out.println("The Boat ChargingTime is updated. ");
                     break ;
-                case "4":
+                case "5":
                     scanner.nextLine();
                     System.out.print("Price: ");
                     double price= scanner.nextDouble();
                     update_boat.setPrice(price);
                     System.out.println("The Price is updated. ");
                     break;
-                case "5":
+                case "6":
                     scanner.nextLine();
                     System.out.print("Availability: ");
                     boolean availability= scanner.nextBoolean();
@@ -64,7 +72,6 @@ public class UpdateBoatView {
                     System.out.println("The Boat Availability is updated. ");
                     break;
                 case "9":
-
                     break ;
                 default:
                     System.out.println("Invalid option");
