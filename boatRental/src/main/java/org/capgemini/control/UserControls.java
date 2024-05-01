@@ -10,10 +10,10 @@ public class UserControls {
         System.out.println("The user is not found !!!");
         return null;
     }
-    public static User findUser(String userID) {
+    public static User findUser(String userName) {
         Model model=Model.getInstance();
         for (User temporaryUser : model.getUsers().getUsers()) {
-            if ((temporaryUser.getUserID().equals(userID)))
+            if ((temporaryUser.getUserName().equals(userName)))
                 return temporaryUser;}
             System.out.println("The user is not found !!!");
 
