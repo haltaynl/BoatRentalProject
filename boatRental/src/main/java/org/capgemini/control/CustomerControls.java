@@ -12,10 +12,10 @@ public class CustomerControls {
         model.getCustomers().store();
     }
 
-    public static Customer findCustomer(String customerID) {
+    public static Customer findCustomer(String customerName) {
         Model model = Model.getInstance();
         for (Customer temporaryCustomer : model.getCustomers().getCustomers()) {
-            if ((temporaryCustomer.getCustomerID().equals(customerID)))
+            if ((temporaryCustomer.getCustomerName().equals(customerName)))
                 return temporaryCustomer;
         }
         System.out.println("The customer is not found !!!");
