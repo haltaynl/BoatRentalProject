@@ -22,7 +22,6 @@ public class AddReservationView {
 
         // checking of wrong data
 
-         Reservation reservation = new Reservation(boatname, customerID, beginDateTime, endDateTime);
-         ReservationControls.addReservation(reservation);
+
     }
 }

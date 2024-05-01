@@ -2,35 +2,45 @@ package org.capgemini.model;
 
 import java.time.LocalDateTime;
 
-public class Reservation {
+public class Reservation extends Boat {
     private String reservationID;
-    private Boat boat;
-    private Customer customer;
+    private String boatName;
+    private String customerName;
     private LocalDateTime beginDateTime;
     private LocalDateTime endDateTime;
     private double cost;
 
-    public Reservation() {
+   public Reservation(String boatName, String customerName, LocalDateTime beginDateTime, LocalDateTime endDateTime,double cost) {
+        this.reservationID=null;
+        this.boatName=boatName;
+        this.customerName=customerName;
+        this.beginDateTime=beginDateTime;
+        this.endDateTime=endDateTime;
+        this.cost=cost;
+   }
+
+    public String getReservationID() {
+        return reservationID;
     }
 
-    public Reservation(String boat, String customer, LocalDateTime beginDateTime, LocalDateTime endDateTime) {
-
+    public void setReservationID(String reservationID) {
+        this.reservationID = reservationID;
     }
 
-    public Boat getBoat() {
-        return boat;
+    public String getBoatName() {
+        return boatName;
     }
 
-    public void setBoat(Boat boat) {
-        this.boat = boat;
+    public void setBoatName(String boatName) {
+        this.boatName = boatName;
     }
 
-    public Customer getCustomer() {
-        return customer;
+    public String getCustomerName() {
+        return customerName;
     }
 
-    public void setCustomer(Customer customer) {
-        this.customer = customer;
+    public void setCustomerName(String customerName) {
+        this.customerName = customerName;
     }
 
     public LocalDateTime getBeginDateTime() {
