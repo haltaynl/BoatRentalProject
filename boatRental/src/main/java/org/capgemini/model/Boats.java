@@ -3,11 +3,13 @@ package org.capgemini.model;
 import java.io.*;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Objects;
 import java.util.Scanner;
 
 public class Boats {
     ArrayList<Boat> boats=new ArrayList<Boat>();
     public static String csvFile = "boatRental/src/main/resources/Boats.csv";
+
 
     public ArrayList<Boat> getBoats() {
         return boats;
@@ -70,15 +72,5 @@ public class Boats {
     }
 
 
-    public String findFreeBoat(LocalDateTime startDateTime, LocalDateTime endDateTime) {
-        String boatID = "";
-        for (Boat boat : boats) {
-            if (boat.isAvailability() && boat.getChargingTime() >= startDateTime.getHour() && boat.getChargingTime() <= endDateTime.getHour()) {
-                boatID = boat.getBoatID();
-                break;
-            }
-        }
-        return boatID;
-    }
 
 }

@@ -17,8 +17,17 @@ public class DeleteBoatView {
         String boatName = scanner.nextLine();
         Boat oldBoat= BoatControls.findBoat(boatName);
         if(oldBoat!=null) {
-            BoatControls.removeBoat(oldBoat);
-            System.out.println("The boat is deleted succesfully !!!");
+            System.out.print("Do you want to delete the bot? (Y/N)");
+            char response = scanner.next().charAt(0);
+            if (response == 'Y' || response == 'y') {
+                System.out.println("Deleting the bot...");
+                BoatControls.removeBoat(oldBoat);
+            } else if (response == 'N' || response == 'n') {
+                System.out.println("Bot deletion cancelled.");
+            } else {
+                System.out.println("Invalid response. Please respond with 'Y' or 'N'.");
+            }
+            System.out.println("The Boat is deleted successfully !!!");
         }
 
     }

@@ -1,5 +1,6 @@
 package org.capgemini.view;
 
+import org.capgemini.control.BoatControls;
 import org.capgemini.control.UserControls;
 import org.capgemini.model.User;
 
@@ -16,8 +17,18 @@ public class DeleteUserView {
         String userName = scanner.nextLine();
         User old_user= UserControls.findUser(userName);
         if(old_user!=null) {
-            UserControls.removeUser(old_user);
-            System.out.println("The User is deleted! ");
+            System.out.print("Do you want to delete the bot? (Y/N)");
+            char response = scanner.next().charAt(0);
+            if (response == 'Y' || response == 'y') {
+                System.out.println("Deleting the bot...");
+                UserControls.removeUser(old_user);
+            } else if (response == 'N' || response == 'n') {
+                System.out.println("Bot deletion cancelled.");
+            } else {
+                System.out.println("Invalid response. Please respond with 'Y' or 'N'.");
+            }
+            System.out.println("The User is deleted successfully !!!");
+
         }
 
     }
