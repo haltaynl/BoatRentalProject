@@ -9,13 +9,26 @@ public class Boat {
     private double price;
     private boolean availability;
 
+
     public Boat() {
+    }
+
+    public Boat(String boatName, String boatType, int seats, int chargingTime, double price, boolean availability) {
+        Model model = Model.getInstance();
+        this.boatID = "Boat" + model.getBoats().getBoats().size();
+        this.boatName = boatName;
+        this.boatType=boatType;
+        this.seats = seats;
+        this.chargingTime = chargingTime;
+        this.price = price;
+        this.availability = availability;
     }
 
     public Boat(String boatID, String boatName, String boatType, int seats, int chargingTime, double price, boolean availability) {
         this.boatID = boatID;
         this.boatName = boatName;
         this.seats = seats;
+        this.boatType=boatType;
         this.chargingTime = chargingTime;
         this.price = price;
         this.availability = availability;
@@ -28,6 +41,7 @@ public class Boat {
     public void setBoatType(String boatType) {
         this.boatType = boatType;
     }
+
     public String getBoatID() {
         return boatID;
     }

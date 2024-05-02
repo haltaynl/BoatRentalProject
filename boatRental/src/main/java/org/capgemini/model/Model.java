@@ -1,5 +1,8 @@
 package org.capgemini.model;
 
+import java.time.LocalDateTime;
+import java.util.Objects;
+
 public class Model {
     private Users users = new Users();
     private Boats boats = new Boats();
@@ -45,6 +48,25 @@ public class Model {
             model = new Model();
         }
         return model;
+    }
+    public String findFreeBoat(String boatType, LocalDateTime startDateTime, LocalDateTime endDateTime) {
+        String freeBoatName = null;
+        OUTER_LOOP:
+        for (Boat boat : model.getBoats().getBoats()) {
+            if (boat.isAvailability() && boat.getBoatType().equals(boatType)) {
+                freeBoatName = boat.getBoatName();
+                for (Reservation reservation : model.getReservations().getReservations()) {
+                    if (freeBoatName.equals(reservation.getBoatName())) {
+                        if ((reservation.getEndDateTime().isAfter(startDateTime) ||
+                                reservation.getBeginDateTime().isBefore(endDateTime))) {
+                            continue OUTER_LOOP;
+                        }
+                    }
+                }
+                return freeBoatName;
+            }
+        }
+        return "";
     }
 
     private Model() {

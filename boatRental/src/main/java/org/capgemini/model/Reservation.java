@@ -2,51 +2,47 @@ package org.capgemini.model;
 
 import java.time.LocalDateTime;
 
-public class Reservation extends Boat {
+public class Reservation {
     private String reservationID;
-    private String boatName;
+    private String BoatName;
     private String customerName;
     private LocalDateTime beginDateTime;
     private LocalDateTime endDateTime;
     private double cost;
 
-   public Reservation(String boatName, String customerName, LocalDateTime beginDateTime, LocalDateTime endDateTime,double cost) {
-        this.reservationID=null;
-        this.boatName=boatName;
+
+   public Reservation(String reservationID, String boatName, String customerName, LocalDateTime beginDateTime, LocalDateTime endDateTime, double cost) {
+        this.reservationID=reservationID;
+        this.BoatName=boatName;
         this.customerName=customerName;
         this.beginDateTime=beginDateTime;
         this.endDateTime=endDateTime;
         this.cost=cost;
    }
+    public Reservation(String boatName, String customerName, LocalDateTime beginDateTime, LocalDateTime endDateTime, double cost) {
+        Model model=Model.getInstance();
+        this.reservationID="Reservation" + model.getReservations().getReservations().size()+1;
+        this.BoatName=boatName;
+        this.customerName=customerName;
+        this.beginDateTime=beginDateTime;
+        this.endDateTime=endDateTime;
+        this.cost=cost;
+    }
 
     public String getReservationID() {
         return reservationID;
     }
-    public Reservation(String reservationID, Boat boat, Customer customer, LocalDateTime beginDateTime, LocalDateTime endDateTime) {
-        this.reservationID = reservationID;
-        this.boat = boat;
-        this.customer = customer;
-        this.beginDateTime = beginDateTime;
-        this.endDateTime = endDateTime;
-        this.cost = cost;
-    }
-
-    public Reservation(String boatname, String customerID, LocalDateTime beginDateTime, LocalDateTime endDateTime, double cost) {
-
-    }
-
-    public Reservation(String boatname, String customerID, LocalDateTime beginDateTime, LocalDateTime endDateTime) {
 
     public void setReservationID(String reservationID) {
         this.reservationID = reservationID;
     }
 
     public String getBoatName() {
-        return boatName;
+        return BoatName;
     }
 
-    public void setBoatName(String boatName) {
-        this.boatName = boatName;
+    public void setBoatName(String rBoatName) {
+        this.BoatName = rBoatName;
     }
 
     public String getCustomerName() {

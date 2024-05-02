@@ -55,10 +55,10 @@ public class Reservations {
             while(scanIn.hasNextLine()){
                 inputLine=scanIn.nextLine();
                 String[] inputArray=inputLine.split(";");
-                DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
-                LocalDateTime beginDateTime = LocalDateTime.parse(inputArray[2], formatter);
-                LocalDateTime endDateTime = LocalDateTime.parse(inputArray[3], formatter);
-                Reservation reservation1=new Reservation(inputArray[0],inputArray[1],beginDateTime,endDateTime, Double.parseDouble(inputArray[4]));
+                DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-M-d'T'HH:mm");
+                LocalDateTime beginDateTime = LocalDateTime.parse(inputArray[3], formatter);
+                LocalDateTime endDateTime = LocalDateTime.parse(inputArray[4], formatter);
+                Reservation reservation1=new Reservation(inputArray[0],inputArray[1],inputArray[2],beginDateTime,endDateTime, Double.parseDouble(inputArray[5]));
                 reservations.add(reservation1);
             }
         } catch (FileNotFoundException e) {

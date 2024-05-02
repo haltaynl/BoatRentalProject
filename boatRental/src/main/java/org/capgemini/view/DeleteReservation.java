@@ -1,6 +1,7 @@
 package org.capgemini.view;
 
 import org.capgemini.control.ReservationControls;
+import org.capgemini.model.Model;
 import org.capgemini.model.Reservation;
 import org.capgemini.model.Reservation;
 
@@ -14,12 +15,15 @@ public class DeleteReservation {
         System.out.println("________________________________");
         System.out.println("Please enter the reservationID of the reservation that will delete");
         System.out.print("ReservationID: ");
-        String userID = scanner.next();
+        String reservationID = scanner.next();
         Reservation old_reservation = ReservationControls.findReservation(reservationID);
         if (old_reservation != null) {
             ReservationControls.removeReservation(old_reservation);
             System.out.println("The reservation is deleted successfully !!!");
         }
+        Model model=Model.getInstance();
+        model.getReservations().store();
 
 
     }
+}

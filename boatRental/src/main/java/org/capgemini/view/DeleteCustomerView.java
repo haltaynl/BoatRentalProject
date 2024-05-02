@@ -1,5 +1,6 @@
 package org.capgemini.view;
 
+import org.capgemini.control.BoatControls;
 import org.capgemini.control.CustomerControls;
 import org.capgemini.control.UserControls;
 import org.capgemini.model.Customer;
@@ -18,7 +19,17 @@ public class DeleteCustomerView {
         String customerName = scanner.nextLine();
         Customer oldCustomer = CustomerControls.findCustomer(customerName);
         if(oldCustomer!=null) {
-            CustomerControls.removeCustomer(oldCustomer);
+            System.out.print("Do you want to delete the bot? (Y/N)");
+            char response = scanner.next().charAt(0);
+            if (response == 'Y' || response == 'y') {
+                System.out.println("Deleting the bot...");
+                CustomerControls.removeCustomer(oldCustomer);
+            } else if (response == 'N' || response == 'n') {
+                System.out.println("Bot deletion cancelled.");
+            } else {
+                System.out.println("Invalid response. Please respond with 'Y' or 'N'.");
+            }
+
             System.out.println("The Customer is deleted successfully !!!");
         }
 
