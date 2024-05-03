@@ -13,8 +13,14 @@ public class User {
         this.userPassword = userPassword;
         this.userRole = userRole;
     }
-    public User() {
+    public User(String userName, String userPassword, String userRole) {
+        long timestamp = System.currentTimeMillis() % 10000;
+        this.userID ="U"+String.format("%04d", timestamp);
+        this.userName = userName;
+        this.userPassword = userPassword;
+        this.userRole = userRole;
     }
+
 
     public String getUserRole() {
         return userRole;

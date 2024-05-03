@@ -13,7 +13,7 @@ public class CancelReservation {
     public static void view() {
         Scanner scanner = new Scanner(System.in);
         System.out.println();
-        System.out.println("========\u26F4 CANCEL RESERVATION \u26F4=======");
+        System.out.println("========⛴ CANCEL RESERVATION ⛴=======");
         System.out.println("________________________________");
         System.out.println("Please enter the reservationID of the reservation that will be canceled");
         System.out.print("ReservationID: ");
@@ -22,13 +22,15 @@ public class CancelReservation {
         if (old_reservation != null) {
             LocalDateTime now = LocalDateTime.now();
             long cancelHours = ChronoUnit.HOURS.between(now, old_reservation.getBeginDateTime());
-            // Eğer iptal 2 saatten fazla önce ise %50 iade yap
-            if (cancelHours >= 2) {
-                old_reservation.setCost(old_reservation.getCost() * 0.5);
-            } else if (cancelHours >= 1) {
-                old_reservation.setCost(old_reservation.getCost() * 0.75);
-            } else old_reservation.setCost(old_reservation.getCost());
+            if (cancelHours > 2) {
+                old_reservation.setCost(0.0);
+            } else if (cancelHours == 2) {
+                old_reservation.setCost(old_reservation.getCost() * 0.50);
+            } else if (cancelHours == 1) {
+                old_reservation.setCost(old_reservation.getCost()*0.75);
+            }else old_reservation.setCost(old_reservation.getCost());
         }
+
         System.out.println("The Reservation has been canceled!");
         if (old_reservation.getCost() > 0) {
             System.out.print("Cancellation Fee : ");
@@ -36,8 +38,8 @@ public class CancelReservation {
             System.out.println("Your reservation fee is going to be added to your hotel receipt!!");
             System.out.println("-------------------------------");
         }
-        System.out.println("The Reservation has been canceled!");
-        Model model=Model.getInstance();
+        Model model = Model.getInstance();
+        model.getReservations().getReservations().remove(old_reservation);
         model.getReservations().store();
     }
 

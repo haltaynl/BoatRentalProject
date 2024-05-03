@@ -5,6 +5,7 @@ import org.capgemini.model.Reservation;
 
 public class ReservationControls {
     public static Model model = Model.getInstance();
+
     public static void addReservation(Reservation reservation) {
         model.getReservations().getReservations().add(reservation);
         model.getReservations().store();
@@ -35,9 +36,28 @@ public class ReservationControls {
     }
 
     public static void removeReservation(Reservation oldReservation) {
-
         model.getReservations().getReservations().remove(oldReservation);
         model.getReservations().store();
+    }
+
+    public static void printReservation(Reservation r){
+        System.out.println("----------------Reservation Details-------------------");
+        System.out.print("Reservation Number: ");
+        System.out.println(r.getReservationID());
+        System.out.print("Customer Name : ");
+        System.out.println(r.getCustomerName());
+        System.out.print("Customer Roomnumber: ");
+        System.out.println(CustomerControls.findCustomer(r.getCustomerName()).getCustomerRoomNumber());
+        System.out.print("Reserved Boat Name: ");
+        System.out.println(r.getBoatName());
+        System.out.print("Start Date Time: ");
+        System.out.println(r.getBeginDateTime());
+        System.out.print("End Date Time: ");
+        System.out.println(r.getEndDateTime());
+        System.out.print("Reservation Cost: ");
+        System.out.println(r.getCost());
+        System.out.println("Your reservation fee is going to be added to your hotel receipt!!");
+        System.out.println("-------------------------------");
     }
 
     }

@@ -15,7 +15,7 @@ public class UserControls {
         for (User temporaryUser : model.getUsers().getUsers()) {
             if ((temporaryUser.getUserName().equals(userName)))
                 return temporaryUser;}
-            System.out.println("The user is not found !!!");
+            System.out.println("The user is not found !!! Please check username and/or  password ");
 
         return null;
     }
@@ -23,7 +23,7 @@ public class UserControls {
     public static void addUser(User user) {
         Model model = Model.getInstance();
         model.getUsers().getUsers().add(user);
-        model.getUsers().store();
+        Users.store();
     }
 
     public static void removeUser(User user) {
@@ -35,12 +35,10 @@ public class UserControls {
     public static void listOfUser() {
         Model model=Model.getInstance();
         System.out.println();
-        System.out.println("\t\t========\u26F4 USER LIST \u26F4=======");
-        System.out.println(String.format("%-15s %-20s %-15s",
-                "User ID", "User Name", "User Role"));
+        System.out.println("========\u26F4 USER LIST \u26F4=======");
+        System.out.println(String.format("%-15s %-15s", "User Name", "User Role"));
         for (User u : model.getUsers().getUsers()) {
-            System.out.println(String.format("%-15s %-20s %-15s",
-                    u.getUserID(), u.getUserName(), u.getUserRole()));
+            System.out.println(String.format("%-15s %-15s", u.getUserName(), u.getUserRole()));
         }
         System.out.println("....End of user list....");
     }

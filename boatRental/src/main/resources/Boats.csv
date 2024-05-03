@@ -15,13 +15,13 @@ Boat14;Rowing Boat 4;Rowing Boat;4;30;27.5;true
 Boat15;Rowing Boat 5;Rowing Boat;4;30;27.5;true
 Boat16;Rowing Boat 6;Rowing Boat;4;30;27.5;true
 Boat17;Rowing Boat 7;Rowing Boat;4;30;27.5;true
-Boat18;Rowing Boat 8;Rowing Boat;4;30;27.5;true
-Boat19;Rowing Boat 9;Rowing Boat;4;30;27.5;true
-Boat20;Rowing Boat 10;Rowing Boat;4;30;27.5;true
+Boat18; boat 80;Rowing Boat;4;30;27.5;true
+Boat19;;Rowing Boat;4;30;27.5;true
+Boat20;;Rowing Boat;4;30;27.5;true
 Boat21;Supboard 1;Supboard;1;30;17.5;true
 Boat22;Supboard 2;Supboard;1;30;17.5;true
 Boat23;Supboard 3;Supboard;1;30;17.5;true
-Boat24;Supboard 4;Supboard;1;30;17.5;true
+Boat24;Supboard 45;Supboard;1;30;17.5;true
 Boat25;Supboard 5;Supboard;1;30;17.5;true
 Boat26;Supboard 6;Supboard;1;30;17.5;true
 Boat27;Supboard 7;Supboard;1;30;17.5;true
@@ -46,3 +46,4 @@ Boat45;Electrical boat 8;Electrical boat;5;30;35.0;false
 Boat47;Kajak 14;Kajak;2;30;23.0;true
 Boat48;Kajak 12;Kajak;2;30;23.0;true
 Boat49;Kajak 13;Kajak;3;30;23.0;true
+Boat48;Supboard 20;Supboard;1;30;17.5;true

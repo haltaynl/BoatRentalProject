@@ -15,7 +15,7 @@ public class CustomerControls {
     public static Customer findCustomer(String customerName) {
         Model model = Model.getInstance();
         for (Customer temporaryCustomer : model.getCustomers().getCustomers()) {
-            if ((temporaryCustomer.getCustomerName().equals(customerName)))
+            if ((temporaryCustomer.getCustomerName().equalsIgnoreCase(customerName)))
                 return temporaryCustomer;
         }
         System.out.println("The customer is not found !!!");
