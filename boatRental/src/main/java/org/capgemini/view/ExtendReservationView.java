@@ -22,16 +22,14 @@ public class ExtendReservationView {
         String reservationId = scanner.nextLine();
         Reservation update_reservation = ReservationControls.findReservation(reservationId);
         if (update_reservation != null) {
-            System.out.println();
             UpdateReservation.updateEndDateTime(update_reservation);
-
             String boatType = BoatControls.findBoat(update_reservation.getBoatName()).getBoatType();
             String freeBoatName = model.findFreeBoat(boatType, update_reservation.getBeginDateTime(), update_reservation.getEndDateTime());
             update_reservation.setBoatName(freeBoatName);
             double price = Objects.requireNonNull(BoatControls.findBoat(freeBoatName)).getPrice() / 4;
             double totalCost = UpdateReservation.calculateRentalCost(update_reservation, price);
             update_reservation.setCost(totalCost);
-            UpdateReservation.printReservation(update_reservation);
+            ReservationControls.printReservation(update_reservation);
             model.getReservations().store();
         }
 

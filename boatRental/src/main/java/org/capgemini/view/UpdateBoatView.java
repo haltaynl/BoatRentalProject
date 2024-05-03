@@ -5,14 +5,15 @@ import org.capgemini.model.Boat;
 import org.capgemini.model.Model;
 
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class UpdateBoatView {
-    
+
     public static void view() {
         Scanner scanner = new Scanner(System.in);
         System.out.println();
-        System.out.println("========\u26F4 UPDATE BOAT \u26F4=======");
+        System.out.println("========⛴ UPDATE BOAT ⛴=======");
         System.out.println("Please enter the Boat Name of the boat that will update");
         System.out.print("Boat Name: ");
         String boatName = scanner.nextLine();
@@ -27,59 +28,83 @@ public class UpdateBoatView {
             System.out.println("6. Update Availability");
             System.out.println("9. Exit");
             System.out.println();
+            boolean isValid = false;
             System.out.print("Please make a choice: ");
             switch (scanner.next()) {
                 case "1":
-                    scanner.nextLine();
                     System.out.print("New Boat Name: ");
+                    scanner.nextLine();
                     String newBoatName = scanner.nextLine();
                     update_boat.setBoatName(newBoatName);
                     System.out.println("The Boat Name is updated successfully. ");
                     break;
                 case "2":
-                    scanner.nextLine();
                     System.out.print("New Boat Type: ");
+                    scanner.nextLine();
                     String newBoatType = scanner.nextLine();
                     update_boat.setBoatName(newBoatType);
+                    System.out.println("The Boat Type is updated successfully. ");
                     break;
                 case "3":
-
-                    System.out.print("Seats: ");
-                    int newSeats = scanner.nextInt();
-                    update_boat.setSeats(newSeats);
-                    System.out.println("The Boat Seats is updated successfully. ");
+                    int seats = 1;
+                    while (!isValid) {
+                        try {
+                            System.out.print("Seats: ");
+                            seats = scanner.nextInt();
+                            isValid=true;
+                            update_boat.setSeats(seats);
+                            System.out.println("The Seats is updated successfully. ");
+                        } catch (InputMismatchException e) {
+                            System.out.println("Invalid input!");
+                            scanner.next();
+                        }
+                    }
                     break;
-
                 case "4":
-                    scanner.nextLine();
-                    System.out.print("Charging Time: ");
-                    int newChargingTime = scanner.nextInt();
-                    update_boat.setChargingTime(newChargingTime);
-                    System.out.println("The Boat ChargingTime is updated successfully. ");
-                    break ;
+                    int chargingTime = 30;
+                    while (!isValid) {
+                        try {
+                            System.out.print("Charging Time: ");
+                            chargingTime = scanner.nextInt();
+                            isValid=true;
+                            update_boat.setChargingTime(chargingTime);
+                            System.out.println("The Charging time is updated successfully. ");
+                        } catch (InputMismatchException e) {
+                            System.out.println("Invalid input!");
+                            scanner.next();
+                        }
+                    }
+                    break;
                 case "5":
-                    scanner.nextLine();
-                    System.out.print("Price: ");
-                    double price= scanner.nextDouble();
-                    update_boat.setPrice(price);
-                    System.out.println("The Price is updated successfully. ");
+                    double price = 17.5;
+                    while (!isValid) {
+                        try {
+                            System.out.print("Price: ");
+                            price = scanner.nextDouble();
+                            isValid=true;
+                            update_boat.setPrice(price);
+                        } catch (InputMismatchException e) {
+                            System.out.println("Invalid input!");
+                            scanner.next();
+                        }
+                    }
                     break;
                 case "6":
-                    scanner.nextLine();
+                    scanner.next();
                     System.out.print("Availability: ");
-                    boolean availability= scanner.nextBoolean();
+                    boolean availability = scanner.nextBoolean();
                     update_boat.setAvailability(availability);
                     System.out.println("The Boat Availability is updated successfully. ");
                     break;
                 case "9":
-                    break ;
+                    break;
                 default:
                     System.out.println("Invalid option");
                     break;
             }
-            Model model=Model.getInstance();
+            Model model = Model.getInstance();
             model.getBoats().store();
 
-            }
         }
     }
+}

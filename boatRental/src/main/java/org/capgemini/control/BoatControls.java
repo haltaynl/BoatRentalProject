@@ -4,7 +4,6 @@ import org.capgemini.model.*;
 
 public class BoatControls {
 
-
     public static void addBoat(Boat boat) {
         Model model = Model.getInstance();
         model.getBoats().getBoats().add(boat);
@@ -14,7 +13,7 @@ public class BoatControls {
     public static Boat findBoat(String boatName) {
         Model model = Model.getInstance();
         for (Boat temporaryBoat : model.getBoats().getBoats()) {
-            if ((temporaryBoat.getBoatName().equals(boatName)))
+            if ((temporaryBoat.getBoatName().equalsIgnoreCase(boatName)))
                 return temporaryBoat;
         }
         System.out.println("The boat is not found !!!");
@@ -24,7 +23,7 @@ public class BoatControls {
     public static void listOfBoats() {
         Model model = Model.getInstance();
         System.out.println();
-        System.out.println("\t\t\t\t\t\t\t\t========\u26F4 BOAT LIST \u26F4=======");
+        System.out.println("\t\t\t\t\t\t================\u26F4 BOAT LIST \u26F4===============");
         System.out.println(String.format("%-20s %-15s %-15s %-15s %-25s %-15s",
                 "Boat Name", "Boat Type","Seats",
                 "Availability", "Price", "Charging Time"));
@@ -41,6 +40,5 @@ public class BoatControls {
         model.getBoats().getBoats().remove(oldBoat);
         model.getBoats().store();
     }
-
 
 }

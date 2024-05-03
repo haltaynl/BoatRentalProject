@@ -20,8 +20,8 @@ public class Reservation {
         this.cost=cost;
    }
     public Reservation(String boatName, String customerName, LocalDateTime beginDateTime, LocalDateTime endDateTime, double cost) {
-        Model model=Model.getInstance();
-        this.reservationID="Reservation" + model.getReservations().getReservations().size()+1;
+        long timestamp = System.currentTimeMillis() % 10000;
+        this.reservationID ="MHR-" + String.format("%04d", timestamp);
         this.BoatName=boatName;
         this.customerName=customerName;
         this.beginDateTime=beginDateTime;

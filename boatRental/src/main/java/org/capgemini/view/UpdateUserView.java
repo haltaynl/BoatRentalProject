@@ -3,15 +3,13 @@ package org.capgemini.view;
 import org.capgemini.control.UserControls;
 import org.capgemini.model.Model;
 import org.capgemini.model.User;
-
-import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class UpdateUserView {
     public static void view() {
         Scanner scanner = new Scanner(System.in);
         System.out.println();
-        System.out.println("========\u26F4 UPDATE BOAT \u26F4=======");
+        System.out.println("========⛴ UPDATE BOAT ⛴=======");
         System.out.println("Please enter the User Name of the boat that will update");
         System.out.print("User Name: ");
         String userName = scanner.nextLine();
