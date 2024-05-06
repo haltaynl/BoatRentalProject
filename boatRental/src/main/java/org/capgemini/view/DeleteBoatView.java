@@ -22,12 +22,12 @@ public class DeleteBoatView {
             if (response == 'Y' || response == 'y') {
                 System.out.println("Deleting the bot...");
                 BoatControls.removeBoat(oldBoat);
+                System.out.println("The Boat is deleted successfully !!!");
             } else if (response == 'N' || response == 'n') {
-                System.out.println("Bot deletion cancelled.");
+                System.out.println("Boat deletion is cancelled.");
             } else {
                 System.out.println("Invalid response. Please respond with 'Y' or 'N'.");
             }
-            System.out.println("The Boat is deleted successfully !!!");
         }
 
     }

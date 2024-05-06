@@ -95,7 +95,7 @@ public class UpdateReservation {
 
 
     public static void updateBeginDateTime(Reservation update_reservation) {
-        scanner.nextLine();
+        //scanner.nextLine();
         while (true) {
             System.out.print("Begin Date Time (yyyy-mm-dd hh:mm) : ");
             String newBeginDateString = scanner.nextLine();
@@ -111,7 +111,7 @@ public class UpdateReservation {
     }
 
     public static void updateEndDateTime(Reservation update_reservation) {
-        scanner.nextLine();
+        //scanner.nextLine();
         while (true) {
             System.out.print("End Date Time (yyyy-mm-dd hh:mm) : ");
             String newEndDateString = scanner.nextLine();
