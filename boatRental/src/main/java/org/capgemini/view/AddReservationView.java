@@ -30,8 +30,13 @@ public class AddReservationView {
         String freeBoatName=model.findFreeBoat(boatType,beginDateTime,endDateTime);
         Duration duration = Duration.between(beginDateTime, endDateTime);
         long minutes = duration.toMinutes();
-
-        double price= Objects.requireNonNull(BoatControls.findBoat(freeBoatName)).getPrice()/4;
+        while(minutes<30) {
+            System.out.println("Reservation time must be more than 30 minutes !!");
+            endDateTime=validEndDateTime();
+            duration = Duration.between(beginDateTime, endDateTime);
+            minutes = duration.toMinutes();
+        }
+        double price= BoatControls.findBoat(freeBoatName).getPrice()/4;
         double totalCost = calculateRentalCost(minutes, price);
 
         Reservation reservation = new Reservation(freeBoatName, customerName, beginDateTime, endDateTime,totalCost);

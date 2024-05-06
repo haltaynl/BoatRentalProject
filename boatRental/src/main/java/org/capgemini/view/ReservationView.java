@@ -1,5 +1,6 @@
 package org.capgemini.view;
 import org.capgemini.control.ReservationControls;
+import org.capgemini.model.Model;
 
 import java.util.Scanner;
 public class ReservationView {
@@ -15,6 +16,7 @@ public class ReservationView {
         System.out.println("4. Extend Reservation");
         System.out.println("5. Delete Reservation");
         System.out.println("6. Cancel Reservation");
+        System.out.println("7. View All Available Boats");
         System.out.println("9. Exit");
         System.out.println();
         System.out.print("Please make a choice: ");
@@ -37,6 +39,9 @@ public class ReservationView {
                     break;
                 case "6":
                     CancelReservation.view();
+                    break;
+                case "7":
+                    Model.ViewAllAvailableBoats();
                     break;
                 case "9":
                     break MAIN_LOOP;
