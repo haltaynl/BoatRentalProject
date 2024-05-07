@@ -1,7 +1,6 @@
 package org.capgemini.view;
 
 import org.capgemini.control.UserControls;
-
 import java.util.Scanner;
 
 public class UserView {
@@ -9,7 +8,7 @@ public class UserView {
         MAIN_LOOP:
         while (true) {
             System.out.println();
-            System.out.println("========\u26F4 USER MENU \u26F4=======");
+            System.out.println("===== USER MENU =====");
             System.out.println("1. Add User");
             System.out.println("2. User List");
             System.out.println("3. Update User");

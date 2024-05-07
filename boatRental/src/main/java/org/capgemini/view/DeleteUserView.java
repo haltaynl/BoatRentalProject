@@ -29,7 +29,7 @@ public class DeleteUserView {
             }
             System.out.println("The User is deleted successfully !!!");
 
-        }
+        } else System.out.println("The user and/or  password is incorrect !!!");
 
     }
 }

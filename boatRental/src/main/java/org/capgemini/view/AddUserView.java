@@ -9,7 +9,7 @@ public class AddUserView {
     public static void view() {
         Scanner scanner = new Scanner(System.in);
         System.out.println();
-        System.out.println("========\u26F4 NEW USER \u26F4=======");
+        System.out.println("======== NEW USER =======");
         System.out.println("Please enter the details of the user");
         System.out.print("UserRole: ");
         String userRole = scanner.nextLine();

@@ -7,11 +7,19 @@ public class Customer {
     private String customerPhone;
     private String customerRoomNumber;
 
-    public Customer(String customerID, String customerName, String customerEmail, String customerPhone, String customerRoomNumber) {
-        this.customerID = customerID;
+    public Customer(String customerName, String customerPhone, String customerEmail,  String customerRoomNumber) {
+        long timestamp = System.currentTimeMillis() % 10000;
+        this.customerID ="MHC-" + String.format("%04d", timestamp);
         this.customerName = customerName;
-        this.customerEmail = customerEmail;
         this.customerPhone = customerPhone;
+        this.customerEmail = customerEmail;
+        this.customerRoomNumber = customerRoomNumber;
+    }
+    public Customer(String customerID, String customerName, String customerPhone, String customerEmail, String customerRoomNumber) {
+        this.customerID =customerID;
+        this.customerName = customerName;
+        this.customerPhone = customerPhone;
+        this.customerEmail = customerEmail;
         this.customerRoomNumber = customerRoomNumber;
     }
 

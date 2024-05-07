@@ -10,7 +10,7 @@ public class AddBoatView {
     public static void view() {
         Scanner scanner = new Scanner(System.in);
         System.out.println();
-        System.out.println("========\u26F4 NEW BOAT \u26F4=======");
+        System.out.println("======== NEW BOAT =======");
         System.out.println("Enter all details of the new boat");
         scanner.nextLine();
         System.out.print("BoatName: ");
@@ -35,7 +35,7 @@ public class AddBoatView {
         }
         double price=17.5;
         try {
-            System.out.print("Charging Time: ");
+            System.out.print("Price: ");
             chargingTime = scanner.nextInt();
         } catch (InputMismatchException e) {
             System.out.println("Invalid input!");

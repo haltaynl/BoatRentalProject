@@ -22,17 +22,20 @@ public class ReservationControls {
 
     public static void listOfReservation() {
         System.out.println();
-        System.out.println("\t\t\t\t\t\t\t\t========\u26F4 RESERVATION LIST \u26F4=======");
-        System.out.println(String.format("%-20s %-20s %-20s %-20s %-20s %-10s",
-                "Reservation ID", "Boat Name", "Customer Name",
+        System.out.println("\t\t=================================== RESERVATION LIST ===================================");
+        System.out.println(String.format("%-15s %-20s %-25s %-30s %-25s %-10s",
+                "ID", "Boat Name", "Customer Name",
                 "Begin Date Time", "End Date Time", "Cost"));
+        System.out.println("-------------------------------------------------" +
+                "------------------------------------------------------------------------------");
         for(Reservation r : model.getReservations().getReservations()) {
-            System.out.println(String.format("%-20s %-20s %-20s %-20s %-20s %-10s",
+            System.out.println(String.format("%-15s %-20s %-25s %-30s %-20s %10.2f",
                     r.getReservationID(),r.getBoatName(), r.getCustomerName(),
-                    r.getBeginDateTime().toString(), r.getEndDateTime(), String.valueOf(r.getCost())));
+                    r.getBeginDateTime().toString(), r.getEndDateTime(), r.getCost()));
 
         }
-        System.out.println(".............................End of The Reservation List.............................");
+        System.out.println(" ");
+        System.out.println("\t\t\t\t.................................End of The Reservation List.................................");
     }
 
     public static void removeReservation(Reservation oldReservation) {
