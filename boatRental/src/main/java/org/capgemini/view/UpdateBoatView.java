@@ -13,7 +13,7 @@ public class UpdateBoatView {
     public static void view() {
         Scanner scanner = new Scanner(System.in);
         System.out.println();
-        System.out.println("========⛴ UPDATE BOAT ⛴=======");
+        System.out.println("======== UPDATE BOAT =======");
         System.out.println("Please enter the Boat Name of the boat that will update");
         System.out.print("Boat Name: ");
         String boatName = scanner.nextLine();

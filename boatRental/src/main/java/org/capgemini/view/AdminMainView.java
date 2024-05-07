@@ -7,14 +7,15 @@ public class AdminMainView {
         Scanner scanner = new Scanner(System.in);
         MAIN_LOOP:
         while (true) {
-        System.out.println("========\u26F4 MAIN MENU \u26F4=======");
-        System.out.println("1. Manage Boats");
-        System.out.println("2. Manage Customers");
-        System.out.println("3. Manage Reservations");
-        System.out.println("4. Manage Users");
-        System.out.println("9. Exit");
-        System.out.println();
-        System.out.print("Please make a choice: ");
+            System.out.println();
+            System.out.println("======== MAIN MENU =======");
+            System.out.println("1. Manage Boats");
+            System.out.println("2. Manage Customers");
+            System.out.println("3. Manage Reservations");
+            System.out.println("4. Manage Users");
+            System.out.println("9. Exit");
+            System.out.println();
+            System.out.print("Please make a choice: ");
 
             switch (scanner.next()) {
                 case "1":

@@ -101,10 +101,11 @@ public class UpdateReservation {
             String newBeginDateString = scanner.nextLine();
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-M-d HH:mm");
             if (newBeginDateString.matches("\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}")) {
+                if(LocalDateTime.parse(newBeginDateString,formatter).isAfter(LocalDateTime.now())){
                 LocalDateTime newBeginDateTime = LocalDateTime.parse(newBeginDateString, formatter);
                 update_reservation.setBeginDateTime(newBeginDateTime);
                 break;
-            } else {
+            } }else {
                 System.out.println("Entered date and time format is incorrect.Try Again");
             }
         }

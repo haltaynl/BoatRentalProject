@@ -27,12 +27,11 @@ public class Customers {
                 sb.append(";");
                 sb.append(oneUser.getCustomerName());
                 sb.append(";");
-                sb.append(oneUser.getCustomerEmail());
-                sb.append(";");
                 sb.append(oneUser.getCustomerPhone());
                 sb.append(";");
+                sb.append(oneUser.getCustomerEmail());
+                sb.append(";");
                 sb.append(oneUser.getCustomerRoomNumber());
-
                 sb.append("\n");
             }
 

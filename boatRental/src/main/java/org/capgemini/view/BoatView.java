@@ -10,7 +10,7 @@ public class BoatView {
         MAIN_LOOP:
         while (true) {
             System.out.println();
-            System.out.println("========\u26F4 BOAT MENU \u26F4=======");
+            System.out.println("====== BOAT MENU =====");
             System.out.println("1. Add Boat");
             System.out.println("2. Boats List");
             System.out.println("3. Update Boat");

@@ -19,20 +19,34 @@ public class BoatControls {
         System.out.println("The boat is not found !!!");
         return null;
     }
+    public static boolean findBoatType(String boatType) {
+        Model model = Model.getInstance();
+        for (Boat temporaryBoat : model.getBoats().getBoats()) {
+            if ((temporaryBoat.getBoatType().equalsIgnoreCase(boatType)))
+                return true;
+        }
+        System.out.println("The boat type is not found !!!");
+        return false;
+    }
 
     public static void listOfBoats() {
         Model model = Model.getInstance();
         System.out.println();
-        System.out.println("\t\t\t\t\t\t================\u26F4 BOAT LIST \u26F4===============");
-        System.out.println(String.format("%-20s %-15s %-15s %-15s %-25s %-15s",
-                "Boat Name", "Boat Type","Seats",
+        System.out.println("\t\t\t\t\t=========================  BOAT LIST  ========================");
+
+        System.out.println(String.format("%-20s %-20s %-15s %-15s %-15s %-15s",
+                "Name", "Type","Seats",
                 "Availability", "Price", "Charging Time"));
+        System.out.println("---------------------------------------------------------" +
+                "-----------------------------------------------");
         for (Boat b : model.getBoats().getBoats()) {
-            System.out.println(String.format("%-20s %-15s %-15s %-15b %-25.2f %-15s",
+            System.out.println(String.format("%-20s %-20s %-15s %-15b %-15.2f %-15s",
                     b.getBoatName(), b.getBoatType(), b.getSeats(), b.isAvailability(),
                     b.getPrice(), b.getChargingTime()));
         }
-        System.out.println("....End of boat list....");
+        System.out.println();
+        System.out.println("\t..................................End of boat list" +
+                "..................................");
     }
 
     public static void removeBoat(Boat oldBoat) {

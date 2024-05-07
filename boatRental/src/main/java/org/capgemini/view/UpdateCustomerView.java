@@ -12,9 +12,9 @@ public class UpdateCustomerView {
     public static void view() {
         Scanner scanner = new Scanner(System.in);
         System.out.println();
-        System.out.println("========\u26F4 UPDATE CUSTOMER \u26F4=======");
+        System.out.println("======== UPDATE CUSTOMER =======");
         System.out.println("Please enter the customer name that will update");
-        System.out.print("customer name: ");
+        System.out.print("Customer name: ");
         String customerName = scanner.nextLine();
         Customer update_customer = CustomerControls.findCustomer(customerName);
 
@@ -34,7 +34,6 @@ public class UpdateCustomerView {
                     String newCustomerName = scanner.nextLine();
                     update_customer.setCustomerName(newCustomerName);
                     System.out.println("The Customer name is successfully updated!");
-
                     break;
                 case "2":
                     System.out.print("Customer Email ");
@@ -42,7 +41,6 @@ public class UpdateCustomerView {
                     String newEmail = scanner.next();
                     update_customer.setCustomerEmail(newEmail);
                     System.out.println("The Customer Email is successfully updated!");
-
                     break;
                 case "3":
                     System.out.print("Customer Phone: ");
@@ -50,25 +48,22 @@ public class UpdateCustomerView {
                     String newCustomerPhone = scanner.next();
                     update_customer.setCustomerPhone(newCustomerPhone);
                     System.out.println("The Customer phone is successfully updated!");
-
-                    break ;
+                    break;
                 case "4":
                     System.out.print("Customer Room Number: ");
                     scanner.nextLine();
-                    String newCustomerRoomNumber= scanner.next();
+                    String newCustomerRoomNumber = scanner.next();
                     update_customer.setCustomerRoomNumber(newCustomerRoomNumber);
                     System.out.println("The Customer Room Number is successfully updated!");
                     break;
-
                 case "9":
-
-                    break ;
+                    break;
                 default:
                     System.out.println("Invalid option");
                     break;
             }
-            Model model=Model.getInstance();
-            model.getCustomers().store();}
-
-       }
+            Model model = Model.getInstance();
+            model.getCustomers().store();
+        }
+    }
 }

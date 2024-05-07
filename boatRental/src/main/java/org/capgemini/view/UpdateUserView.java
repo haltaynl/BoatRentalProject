@@ -9,7 +9,7 @@ public class UpdateUserView {
     public static void view() {
         Scanner scanner = new Scanner(System.in);
         System.out.println();
-        System.out.println("========⛴ UPDATE BOAT ⛴=======");
+        System.out.println("======== UPDATE BOAT =======");
         System.out.println("Please enter the User Name of the boat that will update");
         System.out.print("User Name: ");
         String userName = scanner.nextLine();
@@ -55,6 +55,6 @@ public class UpdateUserView {
             }
 
 
-        }
+        } else System.out.println("The user is not found !!!");
     }
 }

@@ -1,4 +1,5 @@
 package org.capgemini.control;
+
 import org.capgemini.model.*;
 
 public class UserControls {
@@ -7,7 +8,8 @@ public class UserControls {
         for (User temporaryUser : model.getUsers().getUsers()) {
             if ((temporaryUser.getUserName().equals(username)) && (temporaryUser.getUserPassword().equals(password)))
                 return temporaryUser;}
-        System.out.println("The user is not found !!!");
+        System.out.println("The user or the password is wrong !!!");
+        System.out.println(" ");
         return null;
     }
     public static User findUser(String userName) {
@@ -15,8 +17,6 @@ public class UserControls {
         for (User temporaryUser : model.getUsers().getUsers()) {
             if ((temporaryUser.getUserName().equals(userName)))
                 return temporaryUser;}
-            System.out.println("The user is not found !!! Please check username and/or  password ");
-
         return null;
     }
 
@@ -35,14 +35,14 @@ public class UserControls {
     public static void listOfUser() {
         Model model=Model.getInstance();
         System.out.println();
-        System.out.println("========\u26F4 USER LIST \u26F4=======");
-        System.out.println(String.format("%-15s %-15s", "User Name", "User Role"));
+        System.out.println("======== USER LIST =======");
+        System.out.println("--------------------------");
+        System.out.println(String.format("%-15s %-15s", " Name", " Role"));
         for (User u : model.getUsers().getUsers()) {
             System.out.println(String.format("%-15s %-15s", u.getUserName(), u.getUserRole()));
         }
-        System.out.println("....End of user list....");
+        System.out.println("......End of user list......");
     }
-
 
 }
 
