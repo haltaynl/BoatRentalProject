@@ -32,7 +32,7 @@ public class BoatControls {
     public static void listOfBoats() {
         Model model = Model.getInstance();
         System.out.println();
-        System.out.println("\t\t\t\t\t=========================  BOAT LIST  ========================");
+        System.out.println("\t\t=========================  BOAT LIST  ========================");
 
         System.out.println(String.format("%-20s %-20s %-15s %-15s %-15s %-15s",
                 "Name", "Type","Seats",
@@ -47,6 +47,7 @@ public class BoatControls {
         System.out.println();
         System.out.println("\t..................................End of boat list" +
                 "..................................");
+        System.out.println();
     }
 
     public static void removeBoat(Boat oldBoat) {

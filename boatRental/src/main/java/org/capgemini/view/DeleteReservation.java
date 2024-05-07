@@ -12,19 +12,19 @@ public class DeleteReservation {
     public static void view() {
         Scanner scanner = new Scanner(System.in);
         System.out.println();
-        System.out.println("========\u26F4 DELETE RESERVATION \u26F4=======");
+        System.out.println("======== DELETE RESERVATION =======");
         System.out.println("________________________________");
         System.out.println("Please enter the reservationID of the reservation that will delete");
         System.out.print("ReservationID: ");
         String reservationID = scanner.next();
         Reservation oldReservation = ReservationControls.findReservation(reservationID);
         if(oldReservation!=null) {
-            System.out.print("Do you want to delete the bot? (Y/N)");
+            System.out.print("Do you want to delete the reservation " + reservationID +"(Y/N) ? ");
             char response = scanner.next().charAt(0);
             if (response == 'Y' || response == 'y') {
-                System.out.println("Deleting the bot...");
+                System.out.println("Deleting the reservation...");
                 ReservationControls.removeReservation(oldReservation);
-                System.out.println("The Boat is deleted successfully !!!");
+                System.out.println("The reservation is deleted successfully !!!");
             } else if (response == 'N' || response == 'n') {
                 System.out.println("Boat deletion is cancelled.");
             } else {

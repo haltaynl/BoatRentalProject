@@ -13,7 +13,7 @@ public class CancelReservation {
     public static void view() {
         Scanner scanner = new Scanner(System.in);
         System.out.println();
-        System.out.println("========⛴ CANCEL RESERVATION ⛴=======");
+        System.out.println("======== CANCEL RESERVATION =======");
         System.out.println("________________________________");
         System.out.println("Please enter the reservationID of the reservation that will be canceled");
         System.out.print("ReservationID: ");

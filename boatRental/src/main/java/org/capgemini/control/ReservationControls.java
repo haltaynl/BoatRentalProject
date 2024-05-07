@@ -35,7 +35,8 @@ public class ReservationControls {
 
         }
         System.out.println(" ");
-        System.out.println("\t\t\t\t.................................End of The Reservation List.................................");
+        System.out.println(".................................End of The Reservation List.................................");
+        System.out.println();
     }
 
     public static void removeReservation(Reservation oldReservation) {
@@ -44,23 +45,25 @@ public class ReservationControls {
     }
 
     public static void printReservation(Reservation r){
+        System.out.println();
         System.out.println("----------------Reservation Details-------------------");
-        System.out.print("Reservation Number: ");
+        System.out.print(String.format("%-30s","Reservation Number: "));
         System.out.println(r.getReservationID());
-        System.out.print("Customer Name : ");
+        System.out.print(String.format("%-30s","Customer Name : "));
         System.out.println(r.getCustomerName());
-        System.out.print("Customer Roomnumber: ");
+        System.out.print(String.format("%-30s","Customer Roomnumber: "));
         System.out.println(CustomerControls.findCustomer(r.getCustomerName()).getCustomerRoomNumber());
-        System.out.print("Reserved Boat Name: ");
+        System.out.print(String.format("%-30s","Reserved Boat Name: "));
         System.out.println(r.getBoatName());
-        System.out.print("Start Date Time: ");
+        System.out.print(String.format("%-30s","Start Date Time: "));
         System.out.println(r.getBeginDateTime());
-        System.out.print("End Date Time: ");
+        System.out.print(String.format("%-30s","End Date Time: "));
         System.out.println(r.getEndDateTime());
-        System.out.print("Reservation Cost: ");
+        System.out.print(String.format("%-30s","Reservation Cost: "));
         System.out.println(r.getCost());
         System.out.println("Your reservation fee is going to be added to your hotel receipt!!");
-        System.out.println("-------------------------------");
+        System.out.println("----------------Reservation Details-------------------");
+        System.out.println();
     }
 
 

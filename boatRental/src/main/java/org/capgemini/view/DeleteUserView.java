@@ -17,7 +17,7 @@ public class DeleteUserView {
         String userName = scanner.nextLine();
         User old_user= UserControls.findUser(userName);
         if(old_user!=null) {
-            System.out.print("Do you want to delete the bot? (Y/N)");
+            System.out.print("Do you want to delete the user "+ userName+ "(Y/N)");
             char response = scanner.next().charAt(0);
             if (response == 'Y' || response == 'y') {
                 System.out.println("Deleting the bot...");

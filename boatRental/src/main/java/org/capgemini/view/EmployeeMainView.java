@@ -7,7 +7,7 @@ public class EmployeeMainView {
         MAIN_LOOP:
         while (true) {
         System.out.println("Employee Main View");
-        System.out.println("=============");
+        System.out.println("====================");
         System.out.println("1. Manage Customers");
         System.out.println("2. Manage  Reservations");
         System.out.println("9. Exit");
