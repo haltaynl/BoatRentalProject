@@ -6,7 +6,7 @@ public class UserControls {
     public static User findUser(String username, String password) {
         Model model=Model.getInstance();
         for (User temporaryUser : model.getUsers().getUsers()) {
-            if ((temporaryUser.getUserName().equals(username)) && (temporaryUser.getUserPassword().equals(password)))
+            if ((temporaryUser.getUserName().equalsIgnoreCase((username))) && (temporaryUser.getUserPassword().equals(password)))
                 return temporaryUser;}
         System.out.println("The user or the password is wrong !!!");
         System.out.println(" ");
@@ -36,12 +36,14 @@ public class UserControls {
         Model model=Model.getInstance();
         System.out.println();
         System.out.println("======== USER LIST =======");
+        System.out.println(String.format("%-15s %-15s", "Name", "Role"));
         System.out.println("--------------------------");
-        System.out.println(String.format("%-15s %-15s", " Name", " Role"));
         for (User u : model.getUsers().getUsers()) {
             System.out.println(String.format("%-15s %-15s", u.getUserName(), u.getUserRole()));
         }
+        System.out.println();
         System.out.println("......End of user list......");
+        System.out.println();
     }
 
 }

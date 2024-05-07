@@ -12,7 +12,6 @@ public class AddBoatView {
         System.out.println();
         System.out.println("======== NEW BOAT =======");
         System.out.println("Enter all details of the new boat");
-        scanner.nextLine();
         System.out.print("BoatName: ");
         String boatName = scanner.nextLine();
         System.out.print("BoatType: ");
@@ -36,7 +35,7 @@ public class AddBoatView {
         double price=17.5;
         try {
             System.out.print("Price: ");
-            chargingTime = scanner.nextInt();
+            price = scanner.nextInt();
         } catch (InputMismatchException e) {
             System.out.println("Invalid input!");
             scanner.next();

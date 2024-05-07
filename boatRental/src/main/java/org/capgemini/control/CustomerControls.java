@@ -25,17 +25,18 @@ public class CustomerControls {
     public static void listOfCustomers() {
         Model model = Model.getInstance();
         System.out.println();
-        System.out.println("\t\t\t\t============ CUSTOMER LIST ===========");
+        System.out.println("            =================== CUSTOMER LIST ===================");
         System.out.println(String.format("%-15s %-30s %-15s %-30s",
                 "Room Number", "Name", "Phone", "E-Mail Address "));
-        System.out.println("------------------------------------------------------------------------------");
+        System.out.println("-------------------------------------------------------------------------------------");
         for (Customer c : model.getCustomers().getCustomers()) {
             System.out.println(String.format("%-15s %-30s %-15s %-30s",
                     c.getCustomerRoomNumber(), c.getCustomerName(),
                     c.getCustomerPhone(),c.getCustomerEmail()));
         }
         System.out.println();
-        System.out.println("\t\t\t\t\t\t.....End of customer list....");
+        System.out.println("        .......................End of customer list.......................");
+        System.out.println();
     }
 
     public static void removeCustomer(Customer customer) {
